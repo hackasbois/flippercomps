@@ -1,0 +1,30 @@
+Dim oHTTP, sURL, sPayload
+
+' Replace this URL with your Discord webhook URL
+sURL = "https://discord.com/api/webhooks/1176698459433226292/bhrP7BmvYPSrkpPOLjljrlzFZ--sb5DSvo6ey53LApo4gX7kXQVCVJiWqKlMBNqxy7GS"
+
+' Prompt the user to enter the message
+sPayload = InputBox("Enter the message to send to Discord:")
+
+' Check if the user entered a message
+If sPayload <> "" Then
+    ' Create the HTTP object
+    Set oHTTP = CreateObject("MSXML2.ServerXMLHTTP")
+
+    ' Prepare and send the request
+    oHTTP.Open "POST", sURL, False
+    oHTTP.setRequestHeader "Content-Type", "application/json"
+    oHTTP.Send "{""content"": """ & sPayload & """}"
+
+    ' Check if the request was successful (status code 200)
+    If oHTTP.Status = 200 Then
+        MsgBox "Message sent successfully!", vbInformation, "Success"
+    Else
+        MsgBox "Failed to send message. Status code: " & oHTTP.Status & " - " & oHTTP.statusText, vbExclamation, "Error"
+    End If
+
+    ' Clean up
+    Set oHTTP = Nothing
+Else
+    MsgBox "No message entered. Script will exit.", vbInformation, "Info"
+End If
