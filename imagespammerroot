@@ -1,0 +1,8 @@
+Set objShell = CreateObject("WScript.Shell")
+imagePath = "C:\path\to\your\image.jpg"  ' Replace this with the actual image path
+
+Do
+    If Not objShell.Run("rundll32.exe C:\WINDOWS\system32\shimgvw.dll,ImageView_Fullscreen " & imagePath, 1, True) = 1000 Then
+        WScript.Echo "Failed to open the image."
+    End If
+Loop
