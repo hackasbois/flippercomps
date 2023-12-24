@@ -1,0 +1,28 @@
+Instance.new("Part")
+Print("Loading Part")
+
+
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+Instance.new("Weld")
+
+Print("Welds Loaded")
+
+game.InsertService:LoadAsset(8583142277)
